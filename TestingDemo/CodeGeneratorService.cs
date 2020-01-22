@@ -14,7 +14,7 @@ namespace TestingDemo
         {
             CodeGenerationResult result = new CodeGenerationResult { };
 
-            if(string.IsNullOrEmpty(input))
+            if (string.IsNullOrEmpty(input))
             {
                 result.IsSuccessful = false;
                 result.Error = "Input cannot be null or empty";
@@ -34,7 +34,7 @@ namespace TestingDemo
             string prefix = string.Empty;
 
             if (IsVowel(input[0])) prefix = "VC";
-            else prefix = "CS";
+            else prefix = "OT";
 
             // Generazione BODY
             string bodyEnding = IsVowel(input[2]) ? "00--" : "000:";
