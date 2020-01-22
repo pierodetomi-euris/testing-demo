@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TestingDemo.Models;
 
 namespace TestingDemo.UnitTests
 {
@@ -11,9 +12,11 @@ namespace TestingDemo.UnitTests
         {
             #region Arrange
 
+            string input = "fdgdf";
+
             decimal operand1 = 10;
             decimal operand2 = 5;
-
+            
             #endregion
 
             #region Act

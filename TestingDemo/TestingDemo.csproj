@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="CodeGeneratorService.cs" />
+    <Compile Include="Models\CodeGenerationResult.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

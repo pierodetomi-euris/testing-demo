@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TestingDemo.Models;
 
 namespace TestingDemo
 {
@@ -9,9 +10,25 @@ namespace TestingDemo
             "a", "e", "i", "o", "u"
         };
 
-        public string GenerateCode(string input)
+        public CodeGenerationResult GenerateCode(string input)
         {
-            string code = string.Empty;
+            CodeGenerationResult result = new CodeGenerationResult { };
+
+            if(string.IsNullOrEmpty(input))
+            {
+                result.IsSuccessful = false;
+                result.Error = "Input cannot be null or empty";
+
+                return result;
+            }
+
+            if (input.Length < 3)
+            {
+                result.IsSuccessful = false;
+                result.Error = "Input cannot be less than 3 characters";
+
+                return result;
+            }
 
             // Generazione PREFIX
             string prefix = string.Empty;
@@ -26,7 +43,10 @@ namespace TestingDemo
             // Generazione SUFFIX
             string suffix = input.Length % 2 == 0 ? "$PR" : "$DS";
 
-            return $"{prefix}{body}{suffix}";
+            result.Code = $"{prefix}{body}{suffix}";
+            result.IsSuccessful = true;
+
+            return result;
         }
 
         public bool IsVowel(char input)
